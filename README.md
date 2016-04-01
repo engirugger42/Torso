@@ -4,5 +4,6 @@ tail and head are soon to be dead(Rhymes!). With torso, you can complete the bea
 
 Then there's torso. torso knows whats up. torso knows that, just like a cow, the good stuff is between the head and the tail. torso will default to showing 10 lines, just like good old (pointless) tail and head. And, just like good old (completely worthless) tail and head (ever notice tail gets mentioned first? That shows how stupid head is), if you feed it -n X, it'll show you X lines. But not just any X lines. Using advanced science techniques, it shows you X lines centered on the midpoint of the file. Get out of the way, Elon Musk, I think I just made the breakthrough of the millenium. Enjoy torso, unless you enjoy emacs**
 
-* *This goes for nano users too. Pico users...what are you even doing with your life?
-* **No, really. Get out of here and don't come back until you've learned vi/vim.
+**This goes for nano users too. Pico users...what are you even doing with your life?*
+
+***No, really. Get out of here and don't come back until you've learned vi/vim.*
