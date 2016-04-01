@@ -5,6 +5,8 @@
 filename=""
 lines=10
 midline=0
+diff=5
+startline=5
 while getopts ":n:" opt; do
     case $opt in
         n)
@@ -25,11 +27,20 @@ done
  
 for i in $@; do :; done
 filename=$i
-#echo "Filename is $filename"
-midline="$(wc -l $filename | awk '{print $1}')"
-#echo "Midline = $midline"
-midline=$(($midline / 2))
-#echo "Midline = $midline"
-endline=$(($midline + $lines))
-sed -n ''$midline','$endline'p' $filename
+line="$(wc -l $filename | awk '{print $1}')"
+echo "Lines: $line"
+midline=$(($line >> 1))
+echo "Middle line: $midline"
+diff=$(($lines >> 1))
+echo "Diff: $diff"
+startline=$(($midline - $diff))
+echo "Start: $startline"
+
+if [[ $lines%2 -eq 1 ]]; then
+    endline=$(($midline + $diff + 1))
+else
+    endline=$(($midline + $diff))
+fi
+echo "End: $endline"
+sed -n ''$startline','$endline'p' $filename
 exit 1
