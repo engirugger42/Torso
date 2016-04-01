@@ -28,19 +28,16 @@ done
 for i in $@; do :; done
 filename=$i
 line="$(wc -l $filename | awk '{print $1}')"
-echo "Lines: $line"
 midline=$(($line >> 1))
-echo "Middle line: $midline"
 diff=$(($lines >> 1))
-echo "Diff: $diff"
 startline=$(($midline - $diff))
-echo "Start: $startline"
 
 if [[ $lines%2 -eq 1 ]]; then
     endline=$(($midline + $diff + 1))
 else
     endline=$(($midline + $diff))
 fi
-echo "End: $endline"
+
 sed -n ''$startline','$endline'p' $filename
+
 exit 1
